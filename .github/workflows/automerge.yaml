@@ -7,7 +7,7 @@ jobs:
     # see .github/auto-merge.yml for match configuration
     runs-on: ubuntu-latest
     steps:
-      - name: Get Name
+      - id: Get_name
         run: echo ${{github.event_name}}
         run: echo ${{github.actor}}
       if: github.event_name == 'pull_request' && github.actor == 'dependabot[bot]'
