@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ahmadnassri/action-dependabot-auto-merge@v2
-        if: ${{ github.event_name == 'pull_request' && github.actor == 'dependabot[bot]' }}
+        #if: ${{ github.event_name == 'pull_request' && github.actor == 'dependabot[bot]' }}
         with:
           github-token: "${{ secrets.DEPENDABOT_SECRET }}"
           config: .github/auto-merge.yaml
