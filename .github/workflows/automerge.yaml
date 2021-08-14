@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: Get_name
-        run: echo ${{github.event_name}}
-        run: echo ${{github.actor}}
+        run: echo "${{github.event_name}}"
+        run: echo "${{github.actor}}"
       if: github.event_name == 'pull_request' && github.actor == 'dependabot[bot]'
       - uses: actions/checkout@v2
       - uses: ahmadnassri/action-dependabot-auto-merge@v2
