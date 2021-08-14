@@ -1,0 +1,8 @@
+- match:
+    #dependency_name:  ^(?!.*\.tf).*$
+    dependency_type: production
+    update_type: "security:minor" # includes patch updates!
+- match:
+    #dependency_name:  ^(?!.*\.tf).*$
+    dependency_type: production
+    update_type: "semver:minor" # includes patch updates!
