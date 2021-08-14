@@ -7,9 +7,12 @@ jobs:
     # see .github/auto-merge.yml for match configuration
     runs-on: ubuntu-latest
     steps:
+      - name: Get Name
+        run: echo ${{github.event_name}}
+        run: echo ${{github.actor}}
+      if: github.event_name == 'pull_request' && github.actor == 'dependabot[bot]'
       - uses: actions/checkout@v2
       - uses: ahmadnassri/action-dependabot-auto-merge@v2
-        #if: github.event_name == 'pull_request' && github.actor == 'dependabot[bot]'
         with:
           github-token: "${{ secrets.DEPENDABOT_SECRET }}"
           config: .github/auto-merge.yaml
