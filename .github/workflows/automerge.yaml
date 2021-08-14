@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Get_name
         run: |
-          echo ${{github.event_name}}
+          echo "${{github.event_name}}"
       if: github.event_name == 'pull_request' && github.actor == 'dependabot[bot]'
       - uses: actions/checkout@v2
       - uses: ahmadnassri/action-dependabot-auto-merge@v2
