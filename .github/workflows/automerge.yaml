@@ -27,7 +27,7 @@ jobs:
         config: .github/auto-merge.yaml
 
     - name: Enable Pull Request Automerge
-      if: env.PR_NUMBER != '0' && github.event_name == 'pull_request'
+      if: env.PR_NUMBER != '0' #&& github.event_name == 'pull_request'
       uses: peter-evans/enable-pull-request-automerge@v1
       with:
         token: ${{ secrets.DEPENDABOT_SECRET }}
