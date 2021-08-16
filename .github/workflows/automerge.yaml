@@ -16,7 +16,7 @@ jobs:
       run: |
         echo "PR number = ${{ github.event.pull_request.number }}"
         echo "PR number = ${{ env.PR_NUMBER }}"
-        echo "PR name = ${{ github.event.pull_request.name }}"
+        echo "PR name = ${{ github.event.pull_request.pull_request }}"
         echo "PR name = ${{ env.PR_NAME }}"
 
     - name: Checkout Repo
