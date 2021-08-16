@@ -13,6 +13,6 @@ jobs:
         with:
           github-token: "${{ secrets.DEPENDABOT_SECRET }}"
           config: .github/auto-merge.yaml
-      - uses: "pascalgn/automerge-action@v0.14.2"
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      #- uses: "pascalgn/automerge-action@v0.14.2"
+      #  env:
+      #    GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
