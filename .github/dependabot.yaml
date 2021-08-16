@@ -5,6 +5,6 @@
 version: 2
 updates:
   - package-ecosystem: "docker" # See documentation for possible values
-    directory: "/Dockerfiles/B1" # Location of package manifests
+    directory: "/Dockerfiles/C1" # Location of package manifests
     schedule:
       interval: "daily"
