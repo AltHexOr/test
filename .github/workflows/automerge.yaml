@@ -30,7 +30,7 @@ jobs:
         config: .github/auto-merge.yaml
 
     - name: Enable Pull Request Automerge
-      if: startsWith( env.PR_NAME, 'Bump node' ) && github.event.pull_request.sender == 'dependabot[bot]'
+      if: startsWith( env.PR_NAME, 'Bump node' )
       uses: peter-evans/enable-pull-request-automerge@v1
       with:
         token: ${{ secrets.DEPENDABOT_SECRET }}
