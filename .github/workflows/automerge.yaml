@@ -4,6 +4,7 @@ on:
 
 env:
   PR_NUMBER: ${{ github.event.pull_request.number }}
+  PR_NAME: ${{ github.event.pull_request.name }}
 
 jobs:
   auto-merge:
@@ -15,13 +16,15 @@ jobs:
       run: |
         echo "PR number = ${{ github.event.pull_request.number }}"
         echo "PR number = ${{ env.PR_NUMBER }}"
+        echo "PR name = ${{ github.event.pull_request.name }}"
+        echo "PR name = ${{ env.PR_NAME }}"
 
     - name: Checkout Repo
       uses: actions/checkout@v2
 
     - name: Automerge 1
       uses: ahmadnassri/action-dependabot-auto-merge@v2
-      #if: ${{ github.event_name == 'pull_request' && github.actor == 'dependabot[bot]' }}
+      #if: github.event_name == 'pull_request' && github.actor == 'dependabot[bot]' }}
       with:
         github-token: "${{ secrets.DEPENDABOT_SECRET }}"
         config: .github/auto-merge.yaml
