@@ -4,7 +4,7 @@ on:
 
 env:
   PR_NUMBER: ${{ github.event.pull_request.number }}
-  PR_NAME: ${{ github.event.pull_request.name }}
+  PR_NAME: ${{ github.event.pull_request.pull_request }}
 
 jobs:
   auto-merge:
