@@ -28,7 +28,3 @@ updates:
     directory: "/Docker/F" # Location of package manifests
     schedule:
       interval: "daily"
-  - package-ecosystem: "docker" # See documentation for possible values
-    directory: "/Docker/G" # Location of package manifests
-    schedule:
-      interval: "daily"
