@@ -9,30 +9,27 @@ jobs:
   auto-merge:
     # see .github/auto-merge.yml for match configuration
     runs-on: ubuntu-latest
-      steps:
-      - name: View the PR number
-        id: vpr
-        run: |
-          echo "PR number = ${{ github.event.pull_request.number }}"
-          echo "PR number = ${{ env.PR_NUMBER }}"
-
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-
-      - name: Automerge 1
-      - uses: ahmadnassri/action-dependabot-auto-merge@v2
-        #if: ${{ github.event_name == 'pull_request' && github.actor == 'dependabot[bot]' }}
-        with:
-          github-token: "${{ secrets.DEPENDABOT_SECRET }}"
-          config: .github/auto-merge.yaml
-      #- uses: "pascalgn/automerge-action@v0.14.2"
-      #  env:
-      #    GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-
-      - name: Enable Pull Request Automerge
-        if: env.PR_NUMBER != '0' && github.event_name == 'pull_request'
-        uses: peter-evans/enable-pull-request-automerge@v1
-        with:
-          token: ${{ secrets.DEPENDABOT_SECRET }}
-          pull-request-number: ${{ env.PR_NUMBER }}
-          merge-method: squash
+    steps:
+    - name: View the PR number
+      id: vpr
+      run: |
+        echo "PR number = ${{ github.event.pull_request.number }}"
+        echo "PR number = ${{ env.PR_NUMBER }}"
+    - name: Checkout Repo
+      uses: actions/checkout@v2
+    - name: Automerge 1
+    - uses: ahmadnassri/action-dependabot-auto-merge@v2
+      #if: ${{ github.event_name == 'pull_request' && github.actor == 'dependabot[bot]' }}
+      with:
+        github-token: "${{ secrets.DEPENDABOT_SECRET }}"
+        config: .github/auto-merge.yaml
+    #- uses: "pascalgn/automerge-action@v0.14.2"
+    #  env:
+    #    GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+    - name: Enable Pull Request Automerge
+      if: env.PR_NUMBER != '0' && github.event_name == 'pull_request'
+      uses: peter-evans/enable-pull-request-automerge@v1
+      with:
+        token: ${{ secrets.DEPENDABOT_SECRET }}
+        pull-request-number: ${{ env.PR_NUMBER }}
+        merge-method: squash
