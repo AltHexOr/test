@@ -9,4 +9,4 @@
 - match:
     dependency_name:  "node"
     dependency_type: production
-    update_type: "semver:preminor" # includes patch updates!
+    update_type: all # includes patch updates!
