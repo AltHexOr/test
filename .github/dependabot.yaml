@@ -5,30 +5,6 @@
 version: 2
 updates:
   - package-ecosystem: "docker" # See documentation for possible values
-    directory: "/Docker/A" # Location of package manifests
-    schedule:
-      interval: "daily"
-  - package-ecosystem: "docker" # See documentation for possible values
-    directory: "/Docker/B" # Location of package manifests
-    schedule:
-      interval: "daily"
-  - package-ecosystem: "docker" # See documentation for possible values
-    directory: "/Docker/C" # Location of package manifests
-    schedule:
-      interval: "daily"
-  - package-ecosystem: "docker" # See documentation for possible values
-    directory: "/Docker/D" # Location of package manifests
-    schedule:
-      interval: "daily"
-  - package-ecosystem: "docker" # See documentation for possible values
-    directory: "/Docker/E" # Location of package manifests
-    schedule:
-      interval: "daily"
-  - package-ecosystem: "docker" # See documentation for possible values
-    directory: "/Docker/F" # Location of package manifests
-    schedule:
-      interval: "daily"
-  - package-ecosystem: "docker" # See documentation for possible values
-    directory: "/Docker/G" # Location of package manifests
+    directory: "/Dockerfiles/01" # Location of package manifests
     schedule:
       interval: "daily"
