@@ -1,4 +1,4 @@
-FROM nginx:1.10.0
+FROM nginx:1.21.1
 WORKDIR /usr/src/app/
 RUN npm install -g npm@4
 RUN adduser \
