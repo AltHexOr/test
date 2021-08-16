@@ -10,7 +10,6 @@ jobs:
     # see .github/auto-merge.yml for match configuration
     runs-on: ubuntu-latest
     steps:
-      steps:
       - name: View the PR number
         id: vpr
         run: |
