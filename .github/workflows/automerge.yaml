@@ -24,13 +24,13 @@ jobs:
 
     - name: Automerge 1
       uses: ahmadnassri/action-dependabot-auto-merge@v2
-      #if: github.event_name == 'pull_request' && github.actor == 'dependabot[bot]' }}
+      if: !startsWith( env.PR_NAME, 'Bump node' )
       with:
         github-token: "${{ secrets.DEPENDABOT_SECRET }}"
         config: .github/auto-merge.yaml
 
     - name: Enable Pull Request Automerge
-      if: env.PR_NUMBER != '0' #&& github.event_name == 'pull_request'
+      if: startsWith( env.PR_NAME, 'Bump node' ) && github.event.pull_request.sender == 'dependabot[bot]'
       uses: peter-evans/enable-pull-request-automerge@v1
       with:
         token: ${{ secrets.DEPENDABOT_SECRET }}
