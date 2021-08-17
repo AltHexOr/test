@@ -9,6 +9,6 @@ updates:
     schedule:
       interval: "daily"
   - package-ecosystem: "docker" # See documentation for possible values
-    directory: "/Dockerfiles/C1" # Location of package manifests
+    directory: "/Dockerfiles/A1" # Location of package manifests
     schedule:
       interval: "daily"
