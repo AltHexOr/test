@@ -40,7 +40,7 @@ updates:
       - "dependencies"
 
   - package-ecosystem: "terraform" # See documentation for possible values
-    directory: "/terraforming/" # Location of package manifests
+    directory: "/TF" # Location of package manifests
     schedule:
       interval: "daily"
     labels:
