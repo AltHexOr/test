@@ -18,3 +18,10 @@ updates:
     labels:
       - "docker"
       - "dependencies"
+  - package-ecosystem: "docker" # See documentation for possible values
+    directory: "/Dockerfiles/A1" # Location of package manifests
+    schedule:
+      interval: "daily"
+    labels:
+      - "docker"
+      - "dependencies"
