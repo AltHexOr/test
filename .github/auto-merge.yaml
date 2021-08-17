@@ -4,4 +4,4 @@
 - match:
     dependency_name: hashicorp/azurerm
     dependency_type: production
-    update_type: semver-minor
+    update_type: semver:minor
