@@ -22,15 +22,16 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@v2
 
-    - name: Automerge 1
+    - name: Automerge for other than node Dependencies
       uses: ahmadnassri/action-dependabot-auto-merge@v2
       if: startsWith( !env.PR_NAME, 'Bump node' )
       with:
         github-token: "${{ secrets.DEPENDABOT_SECRET }}"
         config: .github/auto-merge.yaml
 
-    - name: Enable Pull Request Automerge
+    - name: Automerge for node Dependencies
       if: startsWith( env.PR_NAME, 'Bump node' )
       uses: "pascalgn/automerge-action@v0.14.2"
       env:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        MERGE_LABELS: dependencies
