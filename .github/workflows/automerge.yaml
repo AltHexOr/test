@@ -5,6 +5,7 @@ on:
 env:
   PR_NUMBER: ${{ github.event.pull_request.number }}
   PR_NAME: ${{ github.event.pull_request.title }}
+  GITHUB_ACTOR: ${{ github.event.pull_request.actor }}
 
 jobs:
   auto-merge:
@@ -30,7 +31,7 @@ jobs:
         config: .github/auto-merge.yaml
 
     - name: Automerge for node Dependencies
-      if: startsWith( env.PR_NAME, 'Bump node' ) && GITHUB_ACTOR == 'dependabot[bot]'
+      if: startsWith( env.PR_NAME, 'Bump node' ) && env.GITHUB_ACTOR == 'dependabot[bot]'
       uses: "pascalgn/automerge-action@v0.14.2"
       env:
         GITHUB_TOKEN: "${{ secrets.DEPENDABOT_SECRET }}"
