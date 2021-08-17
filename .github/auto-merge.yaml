@@ -2,5 +2,6 @@
     dependency_type: production
     update_type: security:minor # includes patch updates!
 - match:
+    dependency_name: hashicorp/azurerm
     dependency_type: production
     update_type: semver-minor
