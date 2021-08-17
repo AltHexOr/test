@@ -22,12 +22,12 @@ jobs:
       uses: ahmadnassri/action-dependabot-auto-merge@v2
       if: ${{ !startsWith( env.PR_NAME, 'Bump node' ) }}
       with:
-        github-token: "${{ secrets.DEPENDABOT_SECRET }}"
+        github-token: "${{ secrets.GITHUB_TOKEN }}"
         config: .github/auto-merge.yaml
 
     - name: Automerge for node Dependencies
       if: startsWith( env.PR_NAME, 'Bump node' ) && env.GITHUB_ACTOR == 'dependabot[bot]'
       uses: "pascalgn/automerge-action@v0.14.2"
       env:
-        GITHUB_TOKEN: "${{ secrets.DEPENDABOT_SECRET }}"
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         MERGE_LABELS: dependencies

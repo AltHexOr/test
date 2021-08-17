@@ -40,7 +40,7 @@ updates:
       - "dependencies"
 
   - package-ecosystem: "terraform" # See documentation for possible values
-    directory: "/TF" # Location of package manifests
+    directory: "/terra" # Location of package manifests
     schedule:
       interval: "daily"
     labels:
@@ -48,6 +48,20 @@ updates:
 
   - package-ecosystem: "docker" # See documentation for possible values
     directory: "/Dockerfiles/nginx" # Location of package manifests
+    schedule:
+      interval: "daily"
+    labels:
+      - "dependencies"
+
+  - package-ecosystem: "docker" # See documentation for possible values
+    directory: "/Dockerfiles/F" # Location of package manifests
+    schedule:
+      interval: "daily"
+    labels:
+      - "dependencies"
+
+  - package-ecosystem: "docker" # See documentation for possible values
+    directory: "/Dockerfiles/E" # Location of package manifests
     schedule:
       interval: "daily"
     labels:
