@@ -10,18 +10,25 @@ updates:
       interval: "daily"
     labels:
       - "dependencies"
-      - "automerge"
+      
   - package-ecosystem: "docker" # See documentation for possible values
     directory: "/Dockerfiles/B" # Location of package manifests
     schedule:
       interval: "daily"
     labels:
       - "dependencies"
-      - "automerge"
+      
   - package-ecosystem: "docker" # See documentation for possible values
     directory: "/Dockerfiles/C" # Location of package manifests
     schedule:
       interval: "daily"
     labels:
+      - "dependencies"   
+
+  - package-ecosystem: "docker" # See documentation for possible values
+    directory: "/Dockerfiles/Z" # Location of package manifests
+    schedule:
+      interval: "daily"
+    labels:
       - "dependencies"
-      - "automerge"
+      
