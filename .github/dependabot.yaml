@@ -33,14 +33,14 @@ updates:
       - "dependencies"
 
   - package-ecosystem: "terraform" # See documentation for possible values
-    directory: "/gitops/terraform" # Location of package manifests
+    directory: "/gitops/terraforms" # Location of package manifests
     schedule:
       interval: "daily"
     labels:
       - "dependencies"
 
   - package-ecosystem: "terraform" # See documentation for possible values
-    directory: "/Other terraform/" # Location of package manifests
+    directory: "/terraforming/" # Location of package manifests
     schedule:
       interval: "daily"
     labels:
