@@ -5,7 +5,7 @@ on:
 env:
   PR_NUMBER: ${{ github.event.pull_request.number }}
   PR_NAME: ${{ github.event.pull_request.title }}
-  GITHUB_ACTOR: ${{ github.event.pull_request.actor }}
+  GITHUB_ACTOR: ${{ github.event.pull_request.user.login }}
 
 jobs:
   auto-merge:
@@ -19,6 +19,7 @@ jobs:
         echo "PR number = ${{ env.PR_NUMBER }}"
         echo "PR name = ${{ github.event.pull_request.title }}"
         echo "PR name = ${{ env.PR_NAME }}"
+        echo "PR actor = ${{ env.GITHUB_ACTOR }}"
 
     - name: Checkout Repo
       uses: actions/checkout@v2
