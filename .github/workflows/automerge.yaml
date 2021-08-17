@@ -14,14 +14,6 @@ jobs:
     # see .github/auto-merge.yml for match configuration
     runs-on: ubuntu-latest
     steps:
-    - name: View the PR number
-      id: vpr
-      run: |
-        echo "PR number = ${{ github.event.pull_request.number }}"
-        echo "PR number = ${{ env.PR_NUMBER }}"
-        echo "PR name = ${{ github.event.pull_request.title }}"
-        echo "PR name = ${{ env.PR_NAME }}"
-        echo "PR actor = ${{ env.GITHUB_ACTOR }}"
 
     - name: Checkout Repo
       uses: actions/checkout@v2
