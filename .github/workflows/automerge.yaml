@@ -2,7 +2,7 @@ name: Dependabot auto-merge
 on:
   pull_request_target:
     paths-ignore:
-      - 'gitops/terraforms/*.tf'
+      - 'gitops/terraform/*.tf'
 
 env:
   PR_NUMBER: ${{ github.event.pull_request.number }}
@@ -18,14 +18,14 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@v2
 
-    - name: Automerge for other than 'node' Dependencies
+    - name: Automerge for any other than 'node' Dependencies
       uses: ahmadnassri/action-dependabot-auto-merge@v2
       if: ${{ !startsWith( env.PR_NAME, 'Bump node' ) }}
       with:
         github-token: "${{ secrets.GITHUB_TOKEN }}"
         config: .github/auto-merge.yaml
 
-    - name: Automerge for node Dependencies
+    - name: Automerge for 'node' Dependencies
       if: startsWith( env.PR_NAME, 'Bump node' ) && env.GITHUB_ACTOR == 'dependabot[bot]'
       uses: "pascalgn/automerge-action@v0.14.2"
       env:
