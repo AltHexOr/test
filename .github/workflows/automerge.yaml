@@ -2,7 +2,7 @@ name: Dependabot auto-merge
 on:
   pull_request_target:
     paths-ignore:
-      - gitops/terraform
+      - 'gitops/terraform/*.tf'
 
 env:
   PR_NUMBER: ${{ github.event.pull_request.number }}
