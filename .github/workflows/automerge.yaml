@@ -28,7 +28,7 @@ jobs:
 
     - name: Automerge for other than 'node' Dependencies
       uses: ahmadnassri/action-dependabot-auto-merge@v2
-      if: !startsWith( env.PR_NAME, 'Bump node' )
+      if: ${{ !startsWith( env.PR_NAME, 'Bump node' ) }}
       with:
         github-token: "${{ secrets.DEPENDABOT_SECRET }}"
         config: .github/auto-merge.yaml
