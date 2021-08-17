@@ -38,3 +38,10 @@ updates:
       interval: "daily"
     labels:
       - "dependencies"
+
+  - package-ecosystem: "terraform" # See documentation for possible values
+    directory: "/Other terraform/" # Location of package manifests
+    schedule:
+      interval: "daily"
+    labels:
+      - "dependencies"
