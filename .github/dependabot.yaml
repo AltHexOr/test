@@ -5,21 +5,21 @@
 version: 2
 updates:
   - package-ecosystem: "docker" # See documentation for possible values
-    directory: "/Dockerfiles/N1" # Location of package manifests
+    directory: "/Dockerfiles/First" # Location of package manifests
     schedule:
       interval: "daily"
     labels:
       - "dependencies"
       - "automerge"
   - package-ecosystem: "docker" # See documentation for possible values
-    directory: "/Dockerfiles/M1" # Location of package manifests
+    directory: "/Dockerfiles/Second" # Location of package manifests
     schedule:
       interval: "daily"
     labels:
       - "dependencies"
       - "automerge"
   - package-ecosystem: "docker" # See documentation for possible values
-    directory: "/Dockerfiles/A1" # Location of package manifests
+    directory: "/Dockerfiles/Third" # Location of package manifests
     schedule:
       interval: "daily"
     labels:
