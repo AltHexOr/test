@@ -30,8 +30,8 @@ jobs:
         config: .github/auto-merge.yaml
 
     - name: Automerge for node Dependencies
-      if: startsWith( env.PR_NAME, 'Bump node' )
+      if: startsWith( env.PR_NAME, 'Bump node' ) && GITHUB_ACTOR == 'dependabot[bot]'
       uses: "pascalgn/automerge-action@v0.14.2"
       env:
-        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        GITHUB_TOKEN: "${{ secrets.DEPENDABOT_SECRET }}"
         MERGE_LABELS: dependencies
