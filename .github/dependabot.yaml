@@ -33,7 +33,7 @@ updates:
       - "dependencies"
 
   - package-ecosystem: "terraform" # See documentation for possible values
-    directory: "/gitops/terraforms" # Location of package manifests
+    directory: "/gitops/terraform" # Location of package manifests
     schedule:
       interval: "daily"
     labels:
@@ -41,6 +41,13 @@ updates:
 
   - package-ecosystem: "terraform" # See documentation for possible values
     directory: "/TF" # Location of package manifests
+    schedule:
+      interval: "daily"
+    labels:
+      - "dependencies"
+
+  - package-ecosystem: "terraform" # See documentation for possible values
+    directory: "/Dockerfiles/nginx" # Location of package manifests
     schedule:
       interval: "daily"
     labels:
