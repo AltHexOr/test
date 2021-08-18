@@ -54,7 +54,7 @@ updates:
       - "dependencies"
 
   - package-ecosystem: "docker" # See documentation for possible values
-    directory: "/Dockerfiles/F" # Location of package manifests
+    directory: "/Dockerfiles/F1" # Location of package manifests
     schedule:
       interval: "daily"
     labels:
