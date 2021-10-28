@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM node:17-alpine
 WORKDIR /usr/src/app/
 RUN npm install -g npm@4
 RUN adduser \
